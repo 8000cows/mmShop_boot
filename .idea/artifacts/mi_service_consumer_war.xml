@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mi-service-consumer:war">
+    <output-path>$PROJECT_DIR$/mi-service-consumer/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>mi-service-consumer</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="mi-service-consumer-1.0.0.war">
+      <element id="artifact" artifact-name="mi-service-consumer:war exploded" />
+    </root>
+  </artifact>
+</component>

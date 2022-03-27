@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ch" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="${#request.getContextPath()}+'/css/bootstrap.css'" />
+    <link rel="stylesheet" th:href="${#request.getContextPath()}+'/css/login.css'" />
+    <script type="text/javascript" th:src="${#request.getContextPath()}+'/js/jquery-3.3.1.js'"></script>
+    <script type="text/javascript" th:src="${#request.getContextPath()}+'/js/bootstrap.js'"></script>
+    <title></title>
+
+</head>
+
+<body>
+<div id="login">
+    <div id="top">
+        <img src="http://localhost:5180/images/cloud.jpg" alt="一朵云"/><span>LOGIN</span>
+        <!--<img th:src="${#request.getContextPath()}+'/images/cloud.jpg'" alt="一朵云"/><span>LOGIN</span>-->
+    </div>
+    <div id="bottom">
+        <form  th:action="${#request.getContextPath()}+'/login'" method="post">
+            <table border="0px" id="table">
+                <tr>
+                    <td class="td1">用户名：</td>
+                    <td><input type="text" value="admin" placeholder="Username" class="td2" name="name"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><span id="nameerr"></span></td>
+                </tr>
+                <tr>
+                    <td class="td1">密码：</td>
+                    <td><input type="password"  value="000000" placeholder="Password" class="td2" name="pwd"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><span id="pwderr"></span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="登录" class="td3">
+                        <a th:href="${#request.getContextPath()}+'/regist.jsp'"><input type="button" value="注册" class="td3	"></a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <!--/*@thymesVar id="errMsg" type="templates"*/-->
+        <p th:text="${errMsg}"></p>
+    </div>
+
+</div>
+</body>
+</html>
