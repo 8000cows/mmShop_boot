@@ -1,5 +1,6 @@
 package com.mapper;
 
+import com.entity.Condition;
 import com.entity.ProductInfo;
 import com.entity.ProductInfoExample;
 import org.apache.ibatis.annotations.Param;
@@ -28,4 +29,8 @@ public interface ProductInfoMapper {
     int updateByPrimaryKeySelective(ProductInfo record);
 
     int updateByPrimaryKey(ProductInfo record);
+
+    int deleteBatch(String[] ids);
+
+    List<ProductInfo> queryByCondition(Condition condition);
 }

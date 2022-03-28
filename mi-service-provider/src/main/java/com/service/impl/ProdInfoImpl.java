@@ -1,23 +1,21 @@
 package com.service.impl;
 
+import com.entity.Condition;
 import com.entity.ProductInfo;
 import com.entity.ProductInfoExample;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.mapper.ProductInfoMapper;
 import com.service.ProdInfoService;
+import com.utils.RedisUtil;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
-import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
-import org.springframework.data.redis.serializer.OxmSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @DubboService(interfaceClass = ProdInfoService.class,timeout = 10000)
 public class ProdInfoImpl implements ProdInfoService {
@@ -52,4 +50,44 @@ public class ProdInfoImpl implements ProdInfoService {
 
         return pageInfo;
     }
+
+    @Override
+    public int addProd(ProductInfo info) {
+        return infoMapper.insert(info);
+    }
+
+    @Override
+    public ProductInfo queryById(Integer pid) {
+        return infoMapper.selectByPrimaryKey(pid);
+    }
+
+    @Override
+    public int updateProd(ProductInfo info) {
+        return infoMapper.updateByPrimaryKey(info);
+    }
+
+    @Override
+    public int deleteProd(Integer pId) {
+        return infoMapper.deleteByPrimaryKey(pId);
+    }
+
+    @Override
+    public int deleteBatchProd(String[] ids) {
+        return infoMapper.deleteBatch(ids);
+    }
+
+    @Override
+    public List<ProductInfo> selectByCondition(Condition condition) {
+        return infoMapper.queryByCondition(condition);
+    }
+
+    @Override
+    public PageInfo<ProductInfo> splitPageByCondition(Condition condition, Integer pageNum) {
+        PageHelper.startPage(pageNum,5);
+
+        List<ProductInfo> infoList = infoMapper.queryByCondition(condition);
+        return new PageInfo<>(infoList);
+    }
+
+
 }

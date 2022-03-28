@@ -1,3 +1,6 @@
+<%--<jsp:useBean id="condition" scope="session" type="com.entity.Condition"/>--%>
+<%--<jsp:useBean id="msg" scope="request" type="java.lang.String"/>--%>
+<%--<jsp:useBean id="typeList" scope="request" type="java.util.List"/>--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@page import="java.util.*" %>
@@ -9,7 +12,7 @@
     <meta charset="UTF-8">
 
     <script type="text/javascript">
-        if ("${msg}" != "") {
+        if ("${msg}" !== "") {
             alert("${msg}");
         }
     </script>
@@ -26,7 +29,7 @@
 <script type="text/javascript">
     function allClick() {
         //取得全选复选框的选中未选 中状态
-        var ischeck=$("#all").prop("checked");
+        let ischeck=$("#all").prop("checked");
         //将此状态赋值给每个商品列表里的复选框
         $("input[name=ck]").each(function () {
             this.checked=ischeck;
@@ -35,11 +38,11 @@
 
     function ckClick() {
         //取得所有name=ck的被选中的复选框
-        var length=$("input[name=ck]:checked").length;
-//取得所有name=ck的复选框
-        var len=$("input[name=ck]").length;
+        let length=$("input[name=ck]:checked").length;
+        //取得所有name=ck的复选框
+        let len=$("input[name=ck]").length;
         //比较
-        if(len == length){
+        if(length === len){
             $("#all").prop("checked",true);
         }else
         {
@@ -70,13 +73,12 @@
     </div>
     <br>
     <div id="table">
-
         <c:choose>
             <c:when test="${infoList.getSize()!=0}">
 
                 <div id="top">
                     <input type="checkbox" id="all" onclick="allClick()" style="margin-left: 50px">&nbsp;&nbsp;全选
-                    <a href="${pageContext.request.contextPath}/admin/addproduct.jsp">
+                    <a href="${pageContext.request.contextPath}/addProduct.jsp">
 
                         <input type="button" class="btn btn-warning" id="add"
                                value="新增商品">
@@ -149,6 +151,7 @@
                                         <c:if test="${infoList.pageNum!=0}">
                                             当前&nbsp;&nbsp;&nbsp;<font style="color:orange;">${infoList.pageNum}</font>&nbsp;&nbsp;&nbsp;页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         </c:if>
+
                                         <c:if test="${infoList.pageNum==0}">
                                             当前&nbsp;&nbsp;&nbsp;<font style="color:orange;">1</font>&nbsp;&nbsp;&nbsp;页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         </c:if>
@@ -167,20 +170,18 @@
         </c:choose>
     </div>
 </div>
+
 </body>
 
 <script type="text/javascript">
-    function mysubmit() {
-        $("#myform").submit();
-    }
 
     //批量删除
     function deleteBatch(num) {
 
         //取得所有被选中删除商品的pid
-        var zhi=$("input[name=ck]:checked");
-        var str="";
-        var id="";
+        let zhi=$("input[name=ck]:checked");
+        let str="";
+        let id="";
 
         let pName = $("#pName").val();
         let typeId = $("#typeId").val();
@@ -206,7 +207,7 @@
                      dataType: "text",
                      success: msg=>{
                          alert(msg);
-                         $("#table").load("${pageContext.request.contextPath}/admin/product.jsp #table")
+                         $("#table").load("${pageContext.request.contextPath}/product.jsp #table")
                      }
                  })
              }
@@ -230,7 +231,7 @@
                 dataType:"text",
                 success: res =>{
                     alert(res);
-                    $("#table").load("${pageContext.request.contextPath}/admin/product.jsp #table")
+                    $("#table").load("${pageContext.request.contextPath}/product.jsp #table")
                 }
             })
         }
@@ -260,7 +261,7 @@
             url:"${pageContext.request.contextPath}/prod/ajaxSplit.action",
             data:{"pName":pName,"typeId":typeId,"lowPrice":lowPrice,"highPrice":highPrice},
             success : ()=>{
-                $("#table").load("${pageContext.request.contextPath}/admin/product.jsp #table")
+                $("#table").load("${pageContext.request.contextPath}/product.jsp #table")
             }
         })
 
@@ -282,12 +283,10 @@
             type:"post",
             success:function () {
                 //重新加载分页显示的组件table
-                //location.href---->http://localhost:8080/admin/login.action
-                $("#table").load("http://localhost:8080/mi/admin/product.jsp #table");
+                $("#table").load("http://localhost:5180/product.jsp #table");
             }
         })
     }
-
 </script>
 
 </html>

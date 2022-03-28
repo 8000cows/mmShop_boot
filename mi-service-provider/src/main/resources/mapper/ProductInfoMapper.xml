@@ -166,7 +166,7 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.entity.ProductInfoExample" resultType="java.lang.Integer" >
-    select count(*) from product_info
+    select count(1) from product_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -213,6 +213,7 @@
       p_number = #{record.pNumber,jdbcType=INTEGER},
       type_id = #{record.typeId,jdbcType=INTEGER},
       p_date = #{record.pDate,jdbcType=DATE}
+    where
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -255,4 +256,36 @@
       p_date = #{pDate,jdbcType=DATE}
     where p_id = #{pId,jdbcType=INTEGER}
   </update>
+
+  <delete id="deleteBatch">
+    delete from product_info where p_id in
+    <foreach collection="array" item="pid" separator="," close=")" open="(">
+      #{pid}
+    </foreach>
+  </delete>
+
+  <select id="queryByCondition" parameterType="com.entity.ProductInfo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from product_info
+    <where>
+      <!--当商品名称 pName 不为空时 -->
+      <if test="pName!=null and pName!=''">p_name like '%${pName}%'</if>
+      <!--当商品类型 typeId 不为空时 -->
+      <if test="typeId!=null and typeId!=-1"> and type_id=#{typeId}</if>
+      <!--当最低价不为空时，最高价为空时，查找大于最低价的-->
+      <if test="(lowPrice!=null and lowPrice!='') and (highPrice==null or highPrice=='')">
+        and p_price &gt;= #{lowPrice}
+      </if>
+      <!--当最高价不为空时，最低价为空时，查找小于最高价的 -->
+      <if test="(highPrice!=null and highPrice!='') and (lowPrice==null or lowPrice=='')">
+        and p_price &lt;= #{highPrice}
+      </if>
+      <!--当最高价和最低价都不为空时，查找介于两者之间的价格-->
+      <if test="(highPrice!=null and highPrice!='') and (lowPrice!=null and lowPrice!='')">
+        and p_price between #{lowPrice} and #{highPrice}
+      </if>
+    </where>
+    order by p_id desc
+  </select>
 </mapper>
