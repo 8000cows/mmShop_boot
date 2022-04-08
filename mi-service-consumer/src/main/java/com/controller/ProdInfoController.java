@@ -2,8 +2,10 @@ package com.controller;
 
 import com.entity.Condition;
 import com.entity.ProductInfo;
+import com.entity.ProductType;
 import com.github.pagehelper.PageInfo;
 import com.service.ProdInfoService;
+import com.service.ProductTypeService;
 import com.utils.FileNameUtil;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.json.JSONObject;
@@ -28,6 +30,8 @@ public class ProdInfoController {
 
     @DubboReference(interfaceClass = ProdInfoService.class)
     private ProdInfoService infoService;
+    @DubboReference(interfaceClass = ProductTypeService.class)
+    private ProductTypeService typeService;
 
     @RequestMapping("/splitPage")
     public String splitPage(Integer pageNum, HttpServletRequest request) {
@@ -35,6 +39,9 @@ public class ProdInfoController {
         int num = pageNum == null ? 1 : pageNum;
         //PageInfo<ProductInfo> list = infoService.splitPage(num, PAGE_SIZE);
         //request.setAttribute("infoList",list);
+
+        List<ProductType> types = typeService.getAll();
+        request.getServletContext().setAttribute("typeList",types);
 
         Condition  condition = (Condition) request.getSession().getAttribute("condition");
         if(condition!=null){
@@ -76,11 +83,13 @@ public class ProdInfoController {
     public Object ajaxImg(MultipartFile image, HttpServletRequest request){
 
         fileName = FileNameUtil.getUUIDFileName() + FileNameUtil.getFileType(image.getOriginalFilename());
-        String path = request.getServletContext().getRealPath("/image_big");
+        //String path = request.getServletContext().getRealPath("/image_big");
+        String path = "E:\\Java练习\\IDEA-Practice\\ssm-project\\mi-springboot\\mi-service-consumer\\src\\main\\resources\\static\\image_big";
 
         // 存储
         try {
-            image.transferTo(new File(path + File.separator + fileName));
+            String imgPath = path + File.separator + fileName;
+            image.transferTo(new File(imgPath));
         } catch (IOException e) {
             e.printStackTrace();
         }

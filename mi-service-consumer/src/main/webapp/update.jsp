@@ -13,7 +13,7 @@
 		<script type="text/javascript" src="${pageContext.request.contextPath }/js/ajaxfileupload.js"></script>
 	</head>
 
-	<body>
+	<body onload="load()">
 		<div id="addAll">
 			<div id="nav">
 				<p>商品管理>更新商品</p>
@@ -32,7 +32,7 @@
 							//创建img 标签对象
 							var imgObj = $("<img/>");
 							//给img标签对象追加属性
-							imgObj.attr("src","/mi/image_big/"+obj.imgUrl);
+							imgObj.attr("src","${pageContext.request.contextPath}/image_big/"+obj.imgUrl);
 							imgObj.attr("width","100px");
 							imgObj.attr("height","100px");
 							//将图片img标签追加到imgDiv末尾
@@ -46,13 +46,12 @@
 						}
 					});
 				}
+
+				function myClose(num) {
+					window.location = "${pageContext.request.contextPath}/prod/splitPage?pageNum="+num;
+				}
 			</script>
-<script type="text/javascript">
-	function myclose(ispage) {
-		window.location="${pageContext.request.contextPath}/admin/product?flag=split&ispage="+ispage;
-		//window.close();
-	}
-</script>
+
 			<div id="table">
 				<form action="${pageContext.request.contextPath}/prod/update.action" enctype="multipart/form-data" method="post" id="myform">
 					<input type="hidden" value="${prod.pId}" name="pId">
@@ -89,7 +88,7 @@
 						
 						<tr>
 							<td class="one">图片介绍</td>
-							<td> <br><div id="imgDiv" style="display:block; width: 40px; height: 50px;"><img src="/mi/image_big/${prod.pImage}" width="100px" height="100px" ></div><br><br><br><br>
+							<td> <br><div id="imgDiv" style="display:block; width: 40px; height: 50px;"><img src="${pageContext.request.contextPath}/image_big/${prod.pImage}" width="100px" height="100px" ></div><br><br><br><br>
 								<input type="file" id="pImage" name="image" onchange="fileChange()">
 								<span id="imgName"></span><br>
 
@@ -137,7 +136,7 @@
 								<input type="submit" value="提交" class="btn btn-success">
 							</td>
 							<td>
-								<input type="reset" value="取消" class="btn btn-default" onclick="myclose(1)">
+								<input type="button" value="取消" class="btn btn-default" onclick="myClose(${param.pageNum})">
 							</td>
 						</tr>
 					</table>

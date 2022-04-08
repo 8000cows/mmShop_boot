@@ -127,9 +127,9 @@
 								<input type="submit" value="提交" class="btn btn-success">
 							</td>
 							<td>
-								<input type="reset" value="取消" class="btn btn-default" onclick="myclose(${param.page})">
+								<input type="reset" value="取消" class="btn btn-default" onclick="close(${param.page})">
 								<script type="text/javascript">
-									function myclose(ispage) {
+									function close(ispage) {
 										window.location="${pageContext.request.contextPath}/prod/split.action?page="+ispage;
 									}
 								</script>

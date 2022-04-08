@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d632e84c-cf08-4b5e-9acf-7fef45e203bb" name="Default Changelist" comment="项目改造的差不多，后面基本没怎么改动&#10;主要有几个点需要完善：&#10;1.多条件查询没有设置redis缓存；&#10;2.图片上传有问题；&#10;3.实在不知道怎么在springboot项目的listener中获取applicationContext对象；&#10;4.本来还想在linux中部署项目，让zookeeper来实现负载均衡，哎，以后有缘了再搞吧">
+    <list default="true" id="d632e84c-cf08-4b5e-9acf-7fef45e203bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/ConsumerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/ConsumerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/controller/ProdInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/controller/ProdInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mi-service-consumer/src/main/webapp/addProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/mi-service-consumer/src/main/webapp/addProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mi-service-consumer/src/main/webapp/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/mi-service-consumer/src/main/webapp/update.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/mi-interface-api/target/" />
     <ignored path="$PROJECT_DIR$/mi-service-provider/target/" />
@@ -39,24 +43,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/ConsumerApp.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/controller/ProdInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
-              <caret line="11" column="92" selection-start-line="11" selection-start-column="92" selection-end-line="11" selection-end-column="92" />
+              <caret line="127" column="47" selection-start-line="127" selection-start-column="47" selection-end-line="127" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/webapp/update.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="138" column="120" selection-start-line="138" selection-start-column="120" selection-end-line="138" selection-end-column="120" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/conf/MvcConfig.java">
+        <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/webapp/product.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#addInterceptors#0;class#MvcConfig#0" />
-              </folding>
+            <state relative-caret-position="308">
+              <caret line="246" column="45" selection-start-line="246" selection-start-column="38" selection-end-line="246" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/resources/templates/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -74,8 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>${#request.getServletContext()}</find>
-      <find>${#request.getContextPath()}</find>
       <find>form</find>
       <find>href</find>
       <find>resp.getWriter()</find>
@@ -102,6 +118,10 @@
       <find>useBean</find>
       <find>add.action</find>
       <find>splitPage</find>
+      <find>ispage</find>
+      <find>取消</find>
+      <find>close</find>
+      <find>imgDiv</find>
     </findStrings>
     <replaceStrings>
       <replace>$}</replace>
@@ -159,13 +179,17 @@
         <option value="$PROJECT_DIR$/mi-service-provider/src/main/resources/mapper/ProductInfoMapper.xml" />
         <option value="$PROJECT_DIR$/mi-interface-api/src/main/java/com/entity/Condition.java" />
         <option value="$PROJECT_DIR$/mi-service-consumer/src/main/webapp/product.jsp" />
-        <option value="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/controller/ProdInfoController.java" />
         <option value="$PROJECT_DIR$/mi-interface-api/src/main/java/com/service/ProductTypeService.java" />
         <option value="$PROJECT_DIR$/mi-service-provider/src/main/java/com/service/impl/ProductTypeServiceImpl.java" />
         <option value="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/conf/GetContext.java" />
         <option value="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/web/TypeListListener.java" />
         <option value="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/conf/MvcConfig.java" />
+        <option value="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/web/TypeListener.java" />
+        <option value="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/conf/WebConfig.java" />
         <option value="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/ConsumerApp.java" />
+        <option value="$PROJECT_DIR$/mi-service-consumer/src/main/webapp/addProduct.jsp" />
+        <option value="$PROJECT_DIR$/mi-service-consumer/src/main/java/com/controller/ProdInfoController.java" />
+        <option value="$PROJECT_DIR$/mi-service-consumer/src/main/webapp/update.jsp" />
       </list>
     </option>
   </component>
@@ -195,8 +219,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
-    <option name="width" value="984" />
-    <option name="height" value="1044" />
+    <option name="width" value="981" />
+    <option name="height" value="522" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -204,7 +228,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -255,12 +278,44 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mi-springboot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mi-service-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mi-springboot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mi-service-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mi-springboot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mi-service-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mi-springboot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mi-service-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -271,10 +326,10 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1648485282226" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1649401255767" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mi-service-consumer/src/main/webapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -316,7 +371,7 @@
     </option>
     <option name="contentProportion" value="0.15403032" />
   </component>
-  <component name="RunManager" selected="Spring Boot.ProviderApp">
+  <component name="RunManager" selected="Spring Boot.ConsumerApp">
     <configuration name="MiServiceConsumerApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mi-service-consumer" />
       <extension name="coverage">
@@ -388,6 +443,7 @@
       <workItem from="1648311884047" duration="615000" />
       <workItem from="1648347297095" duration="19164000" />
       <workItem from="1648434056131" duration="18163000" />
+      <workItem from="1649388155351" duration="11161000" />
     </task>
     <task id="LOCAL-00001" summary="项目改造的差不多，后面基本没怎么改动&#10;主要有几个点需要完善：&#10;1.多条件查询没有设置redis缓存；&#10;2.图片上传有问题；&#10;3.实在不知道怎么在springboot项目的listener中获取applicationContext对象；&#10;4.本来还想在linux中部署项目，让zookeeper来实现负载均衡，哎，以后有缘了再搞吧">
       <created>1648485216508</created>
@@ -405,7 +461,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87418000" />
+    <option name="totallyTimeSpent" value="98584000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -418,9 +474,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info auto_hide="true" content_ui="combo" id="Project" order="0" sideWeight="0.4991119" weight="0.3387227" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info auto_hide="true" content_ui="combo" id="Project" order="0" sideWeight="0.4973357" weight="0.32902184" />
+      <window_info id="Structure" order="1" sideWeight="0.5026643" side_tool="true" weight="0.3387227" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -435,10 +492,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32978722" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4995958" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4987874" weight="0.3285968" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3285968" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="11" sideWeight="0.5004042" side_tool="true" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5012126" side_tool="true" weight="0.3280142" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.32978722" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3285968" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.3285968" />
@@ -517,55 +574,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/io/OutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/io/FileOutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="254" column="56" lean-forward="true" selection-start-line="254" selection-start-column="41" selection-end-line="254" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="24" column="96" lean-forward="true" selection-start-line="24" selection-start-column="96" selection-end-line="24" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="75" selection-start-line="6" selection-start-column="75" selection-end-line="6" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/4.1.5/pagehelper-4.1.5.jar!/com/github/pagehelper/Page.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/4.1.5/pagehelper-4.1.5.jar!/com/github/pagehelper/PageHelper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -663,13 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-provider/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mi-service-provider/src/main/java/com/mapper/ProductInfoMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -705,16 +706,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/web/MoveCacheInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/web/MoveCacheInterceptor.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/aspectj/aspectjweaver/1.9.7/aspectjweaver-1.9.7.jar!/org/aspectj/lang/annotation/Before.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -803,13 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/webapp/update.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="56" column="79" selection-start-line="56" selection-start-column="79" selection-end-line="56" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/4.1.5/pagehelper-4.1.5.jar!/com/github/pagehelper/PageInfo.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -837,26 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/webapp/product.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-provider/src/main/java/com/service/impl/ProdInfoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="54" column="18" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="18" />
-          <folding>
-            <element signature="method#splitPage#0;class#ProdInfoImpl#0" />
-            <element signature="e#2118#2119#0" expanded="true" />
-            <element signature="e#2164#2165#0" expanded="true" />
-            <element signature="method#splitPageByCondition#0;class#ProdInfoImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://cecaf2b5-3674-4f2a-b28a-0514b08c26b3/schema/mishop/table/product_info">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -864,10 +829,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/webapp/addProduct.jsp">
+    <entry file="file://$PROJECT_DIR$/mi-interface-api/src/main/java/com/service/ProductTypeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="52" column="70" selection-start-line="52" selection-start-column="70" selection-end-line="52" selection-end-column="80" />
+        <state relative-caret-position="141">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.6.5/spring-boot-2.6.5.jar!/org/springframework/boot/SpringApplication.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="819" column="16" selection-start-line="819" selection-start-column="16" selection-end-line="819" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/conf/GetContext.java" />
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/web/TypeListListener.java" />
+    <entry file="file://$PROJECT_DIR$/mi-service-provider/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-provider/src/main/java/com/service/impl/ProdInfoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+          <folding>
+            <element signature="e#2118#2119#0" expanded="true" />
+            <element signature="e#2164#2165#0" expanded="true" />
+            <element signature="e#2227#2228#0" expanded="true" />
+            <element signature="e#2284#2285#0" expanded="true" />
+            <element signature="e#2345#2346#0" expanded="true" />
+            <element signature="e#2403#2404#0" expanded="true" />
+            <element signature="e#2459#2460#0" expanded="true" />
+            <element signature="e#2516#2517#0" expanded="true" />
+            <element signature="e#2578#2579#0" expanded="true" />
+            <element signature="e#2628#2629#0" expanded="true" />
+            <element signature="e#2713#2714#0" expanded="true" />
+            <element signature="e#2774#2775#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -882,64 +887,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mi-interface-api/src/main/java/com/service/ProductTypeService.java">
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/controller/ProdInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-provider/src/main/java/com/service/impl/ProductTypeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="56" lean-forward="true" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.6.5/spring-boot-2.6.5.jar!/org/springframework/boot/SpringApplication.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="819" column="16" selection-start-line="819" selection-start-column="16" selection-end-line="819" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/conf/GetContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="63" lean-forward="true" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/web/TypeListListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="46">
+          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/conf/MvcConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="230">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addInterceptors#0;class#MvcConfig#0" />
@@ -949,8 +907,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/ConsumerApp.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/conf/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/web/TypeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/webapp/addProduct.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="129" column="96" lean-forward="true" selection-start-line="129" selection-start-column="96" selection-end-line="129" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-provider/src/main/java/com/service/impl/ProductTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/resources/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/resources/static/image_big/c75c1b9bd4e24b04a48a18e2ac4589ab.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="4369" column="4" selection-start-line="4369" selection-start-column="4" selection-end-line="4369" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/java/com/controller/ProdInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="11" column="92" selection-start-line="11" selection-start-column="92" selection-end-line="11" selection-end-column="92" />
+          <caret line="127" column="47" selection-start-line="127" selection-start-column="47" selection-end-line="127" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/webapp/product.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="246" column="45" selection-start-line="246" selection-start-column="38" selection-end-line="246" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mi-service-consumer/src/main/webapp/update.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="138" column="120" selection-start-line="138" selection-start-column="120" selection-end-line="138" selection-end-column="120" />
         </state>
       </provider>
     </entry>
